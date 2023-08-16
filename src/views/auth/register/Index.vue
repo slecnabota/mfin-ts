@@ -32,7 +32,7 @@
 <script lang="ts">
 import FormButton from "@/components/ui/button/FormButton.vue";
 import DefaultInput from "@/components/ui/input/DefaultInput.vue";
-import Form from '@/validation/form.js';
+import Form from '@/libs/nast-form/index.js';
 import { setIsAuthenticated } from '@/router/router.js';
 import { mapMutations } from 'vuex';
 

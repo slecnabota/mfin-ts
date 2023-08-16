@@ -1,7 +1,7 @@
 import IMask from 'imask';
 import * as validations from './validations';
-import config from '../config/formConfig';
-import store from '../store/index';
+import config from '@/config/formConfig';
+import store from '@/store/index';
 
 interface Rule {
     [key: string]: string[];
