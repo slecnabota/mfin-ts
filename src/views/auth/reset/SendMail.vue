@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="content">
         <form action="" class="form">
             <h2>Письмо отправлено</h2>
@@ -13,7 +13,7 @@
         </form>
     </div>
 </template>
-<script>
+<script lang="ts">
 import FormButton from "@/components/ui/button/FormButton.vue";
 import pages from '@/const/pages.js'
 export default {
@@ -25,9 +25,12 @@ export default {
             pages: pages,
         }
     },
-    methods:{
+    methods: {
         getLink() {
-            return pages[this.$route.name].parent
+            const routeName = this.$route.name as keyof typeof pages;
+            if (routeName && this.pages[routeName] && this.pages[routeName].parent) {
+                return this.pages[routeName].parent;
+            }
         },
     }
 }
@@ -40,9 +43,4 @@ export default {
         line-height: 17px;
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

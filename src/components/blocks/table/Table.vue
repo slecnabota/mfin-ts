@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div class="table" :class="tableHeight">
     <table class="table__inner">
       <thead>
@@ -8,7 +8,7 @@
       </thead>
       <tbody>
         <tr v-for="info in infos" class="item-row">
-          <td v-for="(title, name) in columnNames" class="item item-part" :class="[name], row">
+          <td v-for="(title, name) in columnNames" class="item item-part" :class="[name, row]">
             <slot :name="name" :info="info">{{ info[name] }}</slot>
           </td>
         </tr>
@@ -17,29 +17,14 @@
   </div>
 </template>
     
-<script>
+<script lang="ts">
 export default {
-  data() {
-    return {
-      // item: 'item',
-    }
-  },
   props: {
-    columnNames: {
-      type: Object,
-    },
-    infos: {
-      type: Array,
-    },
-    row: {
-      type: String,
-    },
-    item:{
-      type: String,
-    },
-    tableHeight: {
-      type: String,
-    }
+    columnNames: Object,
+    infos: Array as () => any[],
+    row: String,
+    item: String,
+    tableHeight: String,
   },
   methods: {
   },
@@ -157,8 +142,5 @@ export default {
     width: 200px;
     text-align: left;
   }
-}</style> --><template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+}
+</style>

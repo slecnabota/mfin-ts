@@ -1,11 +1,11 @@
-<!-- <template>
+<template>
     <div class="item">
         <img :src="img" alt="image">
         <h4>{{ heading }}</h4>
         <p>{{ subheading }}</p>
     </div>
 </template>
-<script>
+<script lang="ts">
 export default {
     name: 'CardLink',
     props: {
@@ -53,9 +53,4 @@ export default {
         margin: 0 auto 30px;
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

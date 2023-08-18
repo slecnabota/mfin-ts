@@ -1,11 +1,11 @@
-<!-- <template>
+<template>
   <select v-model="selectedOption">
     <option disabled :value="null">{{ defaultName }}</option>
     <option v-for="item in items" :value="item">{{ item }}</option>
   </select>
 </template>
   
-<script>
+<script lang="ts">
 export default {
   props: {
     items: {
@@ -50,12 +50,4 @@ select {
     outline: none;
   }
 }
-</style> -->
-<template>
-  <h1>No</h1>
-</template>
-<script lang="ts">
-export default{
-
-}
-</script>
+</style>

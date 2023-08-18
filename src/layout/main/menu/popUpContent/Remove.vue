@@ -49,7 +49,7 @@
     <button>Добавить Расход</button>
   </form>
 </template>
-<script>
+<script lang="ts">
 import MySelect from '@/components/ui/Select/Select.vue'
 import PopInput from '@/components/ui/input/PopUpInput.vue';
 export default {
@@ -293,8 +293,8 @@ export default {
   }
 }
 </style> -->
-<template>
-  <h1>No</h1>
-</template>
-<script setup>
-</script>
+<template></template><script lang='ts'>
+
+export default{
+  name: 'Remove'
+}</script>

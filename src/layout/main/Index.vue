@@ -9,7 +9,7 @@
         </div>
     </div>
 </template>
-<script>
+<script lang="ts">
 import SideBar from './nav/SideBar.vue'
 import MenuTop from './menu/MenuTop.vue'
 

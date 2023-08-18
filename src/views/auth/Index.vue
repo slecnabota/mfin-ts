@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="content">
         <form @submit.prevent="login" class="form">
             <h2>Вход</h2>
@@ -23,20 +23,19 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import FormButton from "@/components/ui/button/FormButton.vue";
 import DefaultInput from "@/components/ui/input/DefaultInput.vue";
-import Form from '@/validation/form.js';
-import { setIsAuthenticated } from '@/router/router.js';
-import { mapMutations } from 'vuex';
+import Form from '@/libs/nast-form/index';
+import Auth from '@/libs/nast-auth/index'
 export default {
     name: "LogInPage",
     components: { FormButton, DefaultInput },
     data() {
         return {
             form: new Form(),
+            auth: new Auth(),
             main: "main-btn",
-            formName: "formLogIn",
             inputTypeIcon: "password",
         };
     },
@@ -44,24 +43,19 @@ export default {
         this.form.init({
             email: "",
             password: "",
-        }, this.formName)
+        })
         this.form.setRules({
             'email': ['min:5', 'max:100', 'required', 'email'],
             'password': ['min:5', 'max: 10', 'required'],
         })
     },
     methods: {
-        ...mapMutations(['setEmail']),
         login() {
             if (this.form.validate()) {
+                this.auth.login(this.form.get(), "token")
                 console.log("Форма прошла валидацию");
-                this.setEmail(this.$store.state.formValues.formLogIn.email);
-                setIsAuthenticated(true).then(() => {
-                    this.$router.push({ name: 'payments' });
-                });
             } else {
                 console.log("no")
-                console.log(this.$store.state.formErrors)
             }
 
         },
@@ -87,8 +81,4 @@ form {
         }
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup></script>
+</style>

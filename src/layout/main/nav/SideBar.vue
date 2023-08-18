@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <aside class="side-bar">
         <div class="logo">
             <img :src="logo" alt="">
@@ -12,7 +12,7 @@
     </aside>
 </template>
 
-<script>
+<script lang="ts">
 import Links from './Links.vue'
 import logo from '@/assets/img/logo.svg'
 import bank from '@/assets/img/bank.svg'
@@ -84,9 +84,4 @@ export default {
         }
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

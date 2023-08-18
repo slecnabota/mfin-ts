@@ -20,7 +20,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import pages from '@/const/pages.js'
 import ButtonItem from '@/components/ui/button/Button.vue'
 import MyTable from '@/components/blocks/table/Table.vue'
@@ -184,8 +184,4 @@ export default {
 }
 </style> -->
 
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+<template></template><script lang='ts'></script>

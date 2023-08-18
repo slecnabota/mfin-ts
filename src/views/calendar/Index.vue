@@ -67,7 +67,7 @@
    </div>
 </template>
  
-<script>
+<script lang="ts">
 export default {
    name: 'CalendarIndex',
    props: {
@@ -312,8 +312,8 @@ export default {
 }
 </style>
   -->
+
   <template>
-   <h1>No</h1>
-</template>
-<script setup>
-</script>
+
+  </template>
+  <script lang="ts"></script>

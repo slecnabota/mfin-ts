@@ -4,6 +4,8 @@ interface RootState {
     email: string;
     formValues: Record<string, any>;
     formErrors: Record<string, any>;
+    user: any; 
+    token: string; 
 }
 
 interface FormValues {
@@ -19,6 +21,16 @@ const store: Store<RootState> = createStore({
         email: "example@gmail.com",
         formValues: {},
         formErrors: {},
+        user: {},
+        token: '',
+    },
+    getters: {
+        user: (state) => {
+            return state.user
+        },
+        token: (state) => {
+            return state.token
+        }
     },
     mutations: {
         setEmail(state, email: string) {
@@ -36,7 +48,26 @@ const store: Store<RootState> = createStore({
                 [formName]: errors,
             };
         },
+        login(state, { user, token }) {
+            state.user = user
+            state.token = token
+            localStorage.setItem('auth', JSON.stringify({ user, token }))
+        },
+        logout(state) {
+            state.user = {}
+            state.token = ''
+            localStorage.removeItem('auth')
+        },
+        setUser(state, user) {
+            state.user = user
+            localStorage.setItem('auth', JSON.stringify({ user, token: state.token }))
+        },
         initialiseStore(state) {
+            if (localStorage.getItem('auth')) {
+                const lsAuth = JSON.parse(localStorage.getItem('auth') || '{}');
+                state.user = lsAuth.user;
+                state.token = lsAuth.token;
+            }
             if (localStorage.getItem('email')) {
                 state.email = localStorage.getItem('email')!;
             }

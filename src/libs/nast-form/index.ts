@@ -8,14 +8,13 @@ interface Rule {
 }
 interface FormErrors {
     [formName: string]: {
-      [fieldName: string]: string[]; // An array of error messages
+      [fieldName: string]: string[]; 
     };
   }
   
   interface StoreState {
     formValues: Record<string, Record<string, any>>;
     formErrors: FormErrors;
-    // ... other properties
   }
 class Form {
     private formName = '';

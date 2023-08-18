@@ -1,11 +1,11 @@
-<!-- <template>
+<template>
     <button class="button" :class="btn">
         <slot name="button" >
 
         </slot>
     </button>
 </template>
-<script>
+<script lang="ts">
 export default {
     props: {
         btn:{
@@ -27,9 +27,4 @@ export default {
     letter-spacing: 0.05em;
     color: #FFFFFF;
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

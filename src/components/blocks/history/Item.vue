@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="item">
         <img :src="image" alt="">
         <div class="item-inner">
@@ -9,7 +9,7 @@
         <button>Отмена</button>
     </div>
 </template>
-<script>
+<script lang="ts">
 export default {
     name: 'Item',
     props: {
@@ -59,9 +59,4 @@ export default {
         color: rgba(2, 27, 24, 0.5);
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

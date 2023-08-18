@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="menu menu-top">
         <div class="menu-flex menu-left">
             <pop-up>
@@ -60,7 +60,7 @@
                     </div>
                 </template>
                 <template #pop-up>
-                    <history></history>
+                    <history-page></history-page>
                 </template>
             </pop-up>
             <pop-up :class="customClass">
@@ -77,13 +77,13 @@
     </div>
 </template>
   
-<script>
+<script lang="ts">
 import PopUp from '@/components/blocks/modal/PopUp.vue'
 import Add from './popUpContent/Add.vue'
 import Remove from './popUpContent/Remove.vue'
 import Transfer from './popUpContent/Transfer.vue'
 import Notify from './popUpContent/Notify.vue'
-import History from './popUpContent/History.vue'
+import HistoryPage from './popUpContent/History.vue'
 import User from './popUpContent/User.vue'
 import MenuAction from '@/components/ui/button/MenuAction.vue'
 
@@ -94,7 +94,7 @@ export default {
         // ModalWindow,
         PopUp,
         MenuAction,
-        Add, Remove, Transfer, Notify, History, User
+        Add, Remove, Transfer, Notify, HistoryPage, User
     },
     data() {
         return {
@@ -114,7 +114,7 @@ export default {
         };
     },
     methods: {
-        showModal(templateName) {
+        showModal(templateName:any) {
             this.activeTemplate = templateName;
             this.open = true;
         },
@@ -312,9 +312,4 @@ export default {
     }
 }
 </style>
-   -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+  

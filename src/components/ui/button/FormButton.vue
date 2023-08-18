@@ -3,7 +3,7 @@
         <slot name="btn"></slot>
     </button>
 </template>
-<script>
+<script lang="ts">
 export default {
     name: 'FormButton',
     props:['btn']

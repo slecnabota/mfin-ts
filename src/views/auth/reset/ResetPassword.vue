@@ -1,18 +1,16 @@
-<!-- <template>
+<template>
   <div class="content">
-    <form @submit.prevent="resetPassword" class="form">
+    <form class="form">
       <h2>Восстановить пароль</h2>
       <div class="form__password">
-        <default-input :input-type="inputTypeIcon" input-text="Ваш пароль" v-model="formData.password"
-          :error="errors.password" />
+        <default-input />
         <button class="input-group-text" @click.prevent="toggleInputIcon">
           <font-awesome-icon v-if="inputTypeIcon === 'password'" icon="fa-eye" />
           <font-awesome-icon v-else icon="eye-slash" />
         </button>
       </div>
       <div class="form__password">
-        <default-input :input-type="inputTypeIcon" input-text="Повторите пароль" v-model="formData.password2"
-          :error="errors.password2" />
+        <default-input />
         <button class="input-group-text" @click.prevent="toggleInputIcon">
           <font-awesome-icon v-if="inputTypeIcon === 'password'" icon="fa-eye" />
           <font-awesome-icon v-else icon="eye-slash" />
@@ -28,48 +26,29 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import pages from '@/const/pages.js'
 import FormButton from "@/components/ui/button/FormButton.vue";
 import DefaultInput from "@/components/ui/input/DefaultInput.vue";
-import Form from '@/validation/form.js';
+import Form from '@/libs/nast-form/index';
 export default {
   name: "ResetPassword",
   components: { FormButton, DefaultInput },
   data() {
     return {
-      form: null,
+      form: new Form(),
       mail: "mail",
       pages: pages,
-      formData: {
-        password: "",
-        password2:"",
-      },
-      errors: {},
-      rules: {
-        password: {
-          password: false,
-          required: true,
-          min: 5,
-          max: 100,
-        },
-        password2:{
-          pattern: false,
-          required: true,
-          min: 5,
-          max: 100,
-        }
-      },
       inputTypeIcon: "password",
+      inputTypeIcon2: "password",
     }
-  },
-  created() {
-    this.form = new Form();
-    this.form.setRules(this.rules);
   },
   methods: {
     getLink() {
-      return pages[this.$route.name].parent;
+      const routeName = this.$route.name as keyof typeof pages;
+      if (routeName && this.pages[routeName] && this.pages[routeName].parent) {
+        return this.pages[routeName].parent;
+      }
     },
 
     toggleInputIcon() {
@@ -78,17 +57,6 @@ export default {
 
     toggleInputIcon2() {
       this.inputTypeIcon2 = this.inputTypeIcon2 === "password" ? "text" : "password";
-    },
-    resetPassword() {
-      this.form.validate(this.formData);
-      if (Object.keys(this.form.errors).length === 0) {
-        console.log("Форма прошла валидацию");
-        this.errors = {};
-        this.$router.push({ name: 'loginpage' });
-      } else {
-        console.log("Форма содержит ошибки");
-        this.errors = { ...this.form.errors };
-      }
     },
   }
 };
@@ -107,9 +75,11 @@ export default {
     &>button {
       margin-top: 25px;
     }
-    &__password{
+
+    &__password {
       margin-bottom: 20px;
-      &:last-child{
+
+      &:last-child {
         margin-bottom: 0;
       }
     }
@@ -119,9 +89,4 @@ export default {
     margin-top: 15px;
   }
 }
-</style> -->
-<template>
-  <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

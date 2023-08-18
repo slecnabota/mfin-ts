@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="card">
         <div class="quantity">
             <div class="item">
@@ -61,7 +61,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     name: 'Card',
     props:{
@@ -180,9 +180,4 @@ export default {
         }
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

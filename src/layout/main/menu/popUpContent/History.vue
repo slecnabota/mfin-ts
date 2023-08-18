@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <h4>История действий</h4>
     <div class="history__content">
         <div class="history__item">
@@ -9,13 +9,13 @@
     </div>
 </template>
 
-<script>
-import MySelect from '@/components/ui/Select/Select.vue'
+<script lang="ts">
+import MySelect from '@/components/ui/select/Select.vue'
 import Item from '@/components/blocks/history/Item.vue'
 
 import editMinus from '@/assets/img/history-minus.svg'
 export default {
-    name: 'History',
+    name: 'HistoryPage',
     components: {
         MySelect, Item
     },
@@ -86,9 +86,4 @@ export default {
         }
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

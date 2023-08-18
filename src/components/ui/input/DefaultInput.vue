@@ -5,7 +5,7 @@
     </div>
   </template>
 
-  <script>
+  <script lang="ts">
   export default {
     name: 'DefaultInput',
     props: {
@@ -28,7 +28,7 @@
       console.log('DefaultInput mounted');
     },
     methods: {
-      inputFunc(event) {
+      inputFunc(event:any) {
         let value = event.target.value;
         this.$emit('update:modelValue', value);
       },

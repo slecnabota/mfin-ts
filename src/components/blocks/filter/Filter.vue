@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="filter">
         <div class="filter-left">
             <select-item />
@@ -10,7 +10,7 @@
         </div>
     </div>
 </template>
-<script>
+<script lang="ts">
 import SelectItem from './SelectItem.vue'
 import SearchItem from './SearchItem.vue'
 import FilteringItem from './FilteringItem.vue'
@@ -61,9 +61,4 @@ export default {
         column-gap: 25px;
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

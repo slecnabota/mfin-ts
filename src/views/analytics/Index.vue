@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="content">
         <h1>Аналитика</h1>
         <div class="inner">
@@ -11,7 +11,7 @@
         </div>
     </div>
 </template>
-<script>
+<script lang="ts">
 import pages from '@/const/pages.js'
 import Card from '@/components/ui/button/Card.vue'
 export default {
@@ -33,9 +33,4 @@ export default {
         align-items: center;
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

@@ -1,15 +1,15 @@
-<!-- <template>
+<template>
     <select v-model="selectedItem" class="filter-element selected-item">
         <option v-for="item in items" :key="item.id" :value="item.name">{{ item.name }}</option>
     </select>
 </template>
-<script>
+<script lang="ts">
 
 export default {
     name: 'CashSelect',
     data() {
         return {
-            selectedItem: null,
+            selectedItem: '',
             items: [
                 { id: 1, name: 'По неделям' },
             ],
@@ -66,10 +66,4 @@ export default {
             cursor: pointer;
         }
     }
-</style> -->
-
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

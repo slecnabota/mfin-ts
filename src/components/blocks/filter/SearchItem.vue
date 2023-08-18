@@ -1,11 +1,11 @@
-<!-- <template>
+<template>
     <div class="filter-element search-item">
         <img src="@/assets/img/search.svg" alt="">
         <input type="search" v-model="query" :placeholder="search">
     </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     name: 'SearchItem',
     props:{
@@ -16,7 +16,8 @@ export default {
     data() {
         return {
             query: '',
-            searchResults: [],
+            searchResults: [] as { id: number; title: string }[],
+            delayTimer: null as ReturnType<typeof setTimeout> | null,
         };
     },
     watch: {
@@ -37,8 +38,10 @@ export default {
         },
     },
     methods: {
-        performSearch(query) {
+        performSearch(query:string) {
+            if (this.delayTimer !== null) {
             clearTimeout(this.delayTimer);
+        }
 
             if (query === '') {
                 this.searchResults = [];
@@ -83,9 +86,4 @@ export default {
         }
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

@@ -33,7 +33,6 @@
 import FormButton from "@/components/ui/button/FormButton.vue";
 import DefaultInput from "@/components/ui/input/DefaultInput.vue";
 import Form from '@/libs/nast-form/index.js';
-import { setIsAuthenticated } from '@/router/router.js';
 import { mapMutations } from 'vuex';
 
 export default {
@@ -66,9 +65,6 @@ export default {
         register() {
             if (this.form.validate()) {
                 console.log("yes")
-                setIsAuthenticated(true).then(() => {
-                    this.$router.push({ name: 'payments' });
-                });
                 // this.setEmail(this.$store.state.formValues.formRegister.email);
             } else {
                 console.log("no")

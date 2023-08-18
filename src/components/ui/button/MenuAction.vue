@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <button class="menu-action show-modal-button"  :class="nameClass">
         <slot>
             
@@ -6,7 +6,7 @@
     </button>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     props: {
         nameClass: String,
@@ -14,9 +14,4 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+<style scoped lang="scss"></style>

@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="content">
         <router-link :to="{ name: getLink() }" class="content__back">
             <img src="@/assets/img/back.svg" alt="">
@@ -17,13 +17,13 @@
                         <label for="name">
                             Название:
                         </label>
-                        <acc-input :type="'text'" :name="title" :id="'name'"></acc-input>
+                        <acc-input :type="'text'" :name="(title as any)" :id="'name'"></acc-input>
                     </div>
                     <div class="content__form-row">
                         <label for="balance">
                             Баланс:
                         </label>
-                        <acc-input :type="'text'" :name="balance" :id="'balance'"></acc-input>
+                        <acc-input :type="'text'" :name="(balance as any)" :id="'balance'"></acc-input>
                     </div>
                     <router-link :to="{ name: getLink() }">
                         <my-button class="btn">
@@ -37,9 +37,9 @@
         </div>
     </div>
 </template>
-<script>
+<script lang="ts">
 import pages from '@/const/pages.js'
-import AccSelect from '@/components/ui/Select/AccSelect.vue'
+import AccSelect from '@/components/ui/select/AccSelect.vue'
 import AccInput from '@/components/ui/input/AccInput.vue'
 import MyButton from '@/components/ui/button/Button.vue'
 export default {
@@ -57,7 +57,10 @@ export default {
     },
     methods: {
         getLink() {
-            return pages[this.$route.name].parent
+            const routeName = this.$route.name as keyof typeof pages;
+            if (routeName && this.pages[routeName] && this.pages[routeName].parent) {
+                return this.pages[routeName].parent;
+            }
         },
     },
 
@@ -107,9 +110,4 @@ export default {
         margin: 20px auto 0;
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

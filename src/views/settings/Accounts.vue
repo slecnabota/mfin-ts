@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <modal-window ref="modal" v-model:open="open" :modalRow="modalRow">
         <template #body v-if="activeTemplate === 'button1'">
             <h3>Уверены, что хотите удалить "Название"?</h3>
@@ -59,7 +59,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import pages from '@/const/pages.js'
 import ButtonItem from '@/components/ui/button/Button.vue'
 import SearchItem from '@/components/blocks/filter/SearchItem.vue'
@@ -119,17 +119,21 @@ export default {
     },
     methods: {
         getLink() {
-            return pages[this.$route.name].parent
+            const routeName = this.$route.name as keyof typeof pages;
+            if (routeName && this.pages[routeName] && this.pages[routeName].parent) {
+                return this.pages[routeName].parent;
+            }
         },
-        showModal(templateName) {
+        showModal(templateName: any) {
             this.activeTemplate = templateName;
             this.open = true;
         },
         closeModal() {
             this.open = false;
         },
-        hideImage(event) {
-            const row = event.target.closest("tr");
+        hideImage(event: MouseEvent) {
+            const target = event.target as HTMLElement;
+            const row = target.closest("tr");
             if (row) {
                 row.style.opacity = "0.5";
             }
@@ -199,9 +203,5 @@ export default {
 
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>
+

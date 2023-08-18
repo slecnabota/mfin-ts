@@ -36,7 +36,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import PopUp from "../../blocks/modal/PopUp.vue";
 import MyButton from "../button/Button.vue";
 
@@ -47,15 +47,9 @@ export default {
         MyButton,
     },
     props: {
-        title: {
-            type: String,
-        },
-        heading: {
-            type: String,
-        },
-        items: {
-            type: Array,
-        },
+        title: String,
+        heading: String,
+        items: Array,
     },
     data() {
         return {
@@ -166,8 +160,5 @@ export default {
 }
 </style>
    -->
-   <template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+
+   <template></template><script lang='ts'></script>

@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="nav">
         <router-link to="/payments">
             <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
     export default{
         
     }
@@ -113,9 +113,4 @@
     @media(max-width: 1650px){
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

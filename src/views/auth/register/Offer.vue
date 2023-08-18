@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="content">
         <div class="inner">
             <router-link :to="{ name: getLink() }" class="content__back">
@@ -11,12 +11,14 @@
                 ДОГОВОР ПУБЛИЧНОЙ ОФЕРТЫ
             </h1>
             <div class="inner-text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus magnam, explicabo exercitationem repellat voluptate in laborum similique eveniet. Reprehenderit repudiandae voluptatem architecto harum autem voluptatibus id aspernatur sint placeat corporis?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus magnam, explicabo exercitationem
+                repellat voluptate in laborum similique eveniet. Reprehenderit repudiandae voluptatem architecto harum autem
+                voluptatibus id aspernatur sint placeat corporis?
             </div>
         </div>
     </div>
 </template> 
-<script>
+<script lang="ts">
 import pages from '@/const/pages.js'
 export default {
     name: 'offer',
@@ -27,7 +29,10 @@ export default {
     },
     methods: {
         getLink() {
-            return pages[this.$route.name].parent
+            const routeName = this.$route.name as keyof typeof pages;
+            if (routeName && this.pages[routeName] && this.pages[routeName].parent) {
+                return this.pages[routeName].parent;
+            }
         },
     }
 }
@@ -47,16 +52,11 @@ export default {
             line-height: 29px;
             text-align: center;
             color: #0C0C25;
-            &:not(:last-child){
+
+            &:not(:last-child) {
                 margin-bottom: 30px;
             }
 
         }
     }
-}
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+}</style>

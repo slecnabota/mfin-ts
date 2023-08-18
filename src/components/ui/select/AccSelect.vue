@@ -1,11 +1,11 @@
-<!-- <template>
+<template>
     <select v-model="selectedOption">
         <option disabled :value="null">{{ defaultName }}</option>
         <option v-for="item in items" :value="item">{{ item }}</option>
     </select>
 </template>
     
-<script>
+<script lang="ts">
 export default {
     name: "AccSelect",
     props: {
@@ -54,9 +54,4 @@ select {
         padding: 15px 20px;
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

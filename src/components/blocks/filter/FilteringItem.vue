@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <pop-up :class="customClass" class="filtering-item">
         <template #button="{ click }">
             <div class="filtering-element filter-item" @click="click">
@@ -34,7 +34,7 @@
     </pop-up>
 </template>
 
-<script>
+<script lang="ts">
 import PopUp from '../modal/PopUp.vue'
 import FilterSelect from '../../ui/select/FilterSelect.vue'
 import MyButton from '../../ui/button/Button.vue'
@@ -152,9 +152,4 @@ export default {
         }
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

@@ -1,26 +1,29 @@
-<!-- <template>
-    <p class="user-mail">{{ $store.state.email }}</p>
+<template>
+    <!-- <p class="user-mail">{{ $store.state.email }}</p> -->
     <p class="user-item">Подписка</p>
     <p class="user-item">Смена пароля</p>
-    <form @submit.prevent="logout">
+    <form @submit.prevent="auth.logout()">
         <button class="user-item exit">Выход</button>
     </form>
 </template>
 
-<script>
-import { mapMutations } from 'vuex';
-import { setIsAuthenticated } from '@/router/router.js';
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+// import { Store } from 'vuex'; 
+import Auth from '../../../../libs/nast-auth/index';
+export default defineComponent({
     name: 'User',
-    methods: {
-        ...mapMutations(['setEmail']),
-        logout() {
-            this.setEmail('');
-            setIsAuthenticated(false);
-            this.$router.push({ name: 'loginpage' });
-        },
+    data(){
+        return{
+            auth: new Auth()
+        }
     }
-}
+    // computed: {
+    //     $store: function () {
+    //         return (this as any).$store as Store<any>; // Explicitly define $store property
+    //     },
+    // },
+})
 </script>
 
 <style scoped lang="scss">
@@ -55,9 +58,4 @@ export default {
         color: rgba(2, 27, 24, 0.5);
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

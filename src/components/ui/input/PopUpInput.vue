@@ -1,6 +1,6 @@
-<!-- <template>
+<template>
   <div class="filter-select">
-    <pop-up :class="[customClass, id]">
+    <pop-up :class:any="[customClass, id]">
       <template #button="{ click }">
         <div class="item" @click="click">
           {{ computedHeading }}
@@ -10,8 +10,8 @@
       <template #pop-up="{ click }">
         <div class="select">
           <div class="select__content">
-            <label :for="item" v-for="item in items" :key="item" @change="selectItem(item, click)">
-              <input type="radio" :id="item" :value="item" />
+            <label :for:any="item" v-for="item in items" :key:any="item" @change="selectItem(item, click)">
+              <input type="radio" :id:any="item" :value="item" />
               {{ item }}
             </label>
           </div>
@@ -21,29 +21,21 @@
   </div>
 </template>
   
-<script>
+<script lang="ts">
 import PopUp from "../../blocks/modal/PopUp.vue";
 import MyButton from "../button/Button.vue";
-
-export default {
+import { defineComponent } from 'vue'
+export default defineComponent({
   name: "PopInput",
   components: {
     PopUp,
     MyButton,
   },
   props: {
-    heading: {
-      type: String,
-    },
-    items: {
-      type: Array,
-    },
-    id: {
-      type: String,
-    },
-    modelValue: {
-      type: String,
-    }
+    heading: String,
+    items: Array,
+    id: String,
+    modelValue: String,
   },
   data() {
     return {
@@ -51,7 +43,7 @@ export default {
     };
   },
   methods: {
-    selectItem(item, click) {
+    selectItem(item:any, click:any) {
       this.$emit('update:modelValue', item)
       click()
     }
@@ -61,7 +53,7 @@ export default {
       return this.modelValue || this.heading;
     },
   },
-};
+})
 </script>
   
 <style scoped lang="scss">
@@ -139,9 +131,4 @@ export default {
   }
 }
 </style>
-   -->
-   <template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+  

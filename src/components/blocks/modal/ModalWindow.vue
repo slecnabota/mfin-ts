@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div v-if="open" class="modal-shadow" @click.self="closeModal">
         <div class="modal" v-if="open" :class="modalRow">
             <div class="modal-close" @click="closeModal">
@@ -15,7 +15,7 @@
     </div>
 </template>
   
-<script>
+<script lang="ts">
 export default {
     name: "ModalWindow",
     props: {
@@ -78,14 +78,10 @@ export default {
     &-content {
         margin-top: 10px;
     }
-    &-btn{
+
+    &-btn {
         top: calc(50% - 150px);
     }
 }
 </style>
-   -->
-   <template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+  

@@ -15,7 +15,7 @@
                 v-model="selectedCurrency"></pop-input>
         </div>
         <hr>
-        <div ref="addGroup" @click="groupClick" class="group-parent">
+        <div ref="addGroup" @click="groupClick" class="group-parent" v-show="!groupClicked">
             <img src="@/assets/img/dotts.svg" alt="">
             <p>Добавить комментарий</p>
         </div>
@@ -39,7 +39,7 @@
     </form>
 </template>
 
-<script>
+<script lang="ts">
 import MySelect from '@/components/ui/Select/Select.vue';
 import PopInput from '@/components/ui/input/PopUpInput.vue';
 export default {
@@ -53,7 +53,7 @@ export default {
             selectedDate: null,
             selectedItem: '',
             selectedToItem: '',
-            selectedFile: null,
+            selectedFile: null as File | null,
             inputNumber: null,
             selectedCurrency: '',
             textareaValue: '',
@@ -93,13 +93,13 @@ export default {
         };
     },
     methods: {
-        handleFileChange(event) {
-            const file = event.target.files[0];
-            this.selectedFile = file;
-        },
+        handleFileChange(event: Event) {
+        const inputElement = event.target as HTMLInputElement;
+        const file = inputElement.files[0];
+        this.selectedFile = file;
+    },
         groupClick() {
             this.groupClicked = !this.groupClicked;
-            this.$refs.addGroup.style = "display: none;"
         },
         onSubmit() {
             const formData = {
@@ -249,8 +249,8 @@ export default {
     }
 }
 </style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
+<template></template><script lang='ts'>
+export default{
+    name: 'Transfer'
+}
 </script>

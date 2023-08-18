@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <h4>Уведомления</h4>
     <div class="notify__content">
         <div class="notify__item" v-for="valueItem in value">
@@ -7,8 +7,8 @@
     </div>
 </template>
 
-<script>
-import MySelect from '@/components/ui/Select/Select.vue'
+<script lang="ts">
+import MySelect from '@/components/ui/select/Select.vue'
 export default {
     name: 'Notify',
     components: {
@@ -16,7 +16,7 @@ export default {
     },
     props: {
         value: {
-            type: Array,
+            type: Object,
         }
     },
     data() {
@@ -60,9 +60,4 @@ export default {
         }
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

@@ -1,7 +1,7 @@
-<!-- <template>
+<template>
     <input :type="type" :placeholder="name" :id="id" class="input" :value="name">
 </template>
-<script>
+<script lang="ts">
 export default {
     name: 'AccInput',
     data() {
@@ -42,9 +42,4 @@ export default {
         color: #021B18;
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>

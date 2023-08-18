@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <modal-window ref="modal" v-model:open="open" :modalRow="modalRow">
         <template #body v-if="activeTemplate === 'button3'">
             <h3>Уверены, что хотите удалить "Название"?</h3>
@@ -48,7 +48,7 @@
         </div>
     </div>
 </template>
-<script>
+<script lang="ts">
 import Filter from '@/components/blocks/filter/Filter.vue'
 import Card from '@/components/blocks/card/Card.vue'
 import MyTable from '@/components/blocks/table/Table.vue'
@@ -169,7 +169,7 @@ export default {
     },
 
     methods: {
-        showModal(templateName) {
+        showModal(templateName:any) {
             this.activeTemplate = templateName;
             this.open = true;
         },
@@ -236,9 +236,5 @@ export default {
 
     }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>
+

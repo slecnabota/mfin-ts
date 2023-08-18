@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <modal-window ref="modal" v-model:open="open" :modalRow="modalRow">
     <template #body v-if="activeTemplate === 'button1'">
       <h3>Уверены, что хотите удалить "Название"?</h3>
@@ -38,7 +38,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Filter from '@/components/blocks/filter/Filter.vue'
 import Card from '@/components/blocks/card/Card.vue'
 import MyTable from '@/components/blocks/table/Table.vue'
@@ -201,25 +201,27 @@ export default {
     }
   },
   methods: {
-    startsWithMinus() {
-      return this.infos.sum.startsWith("-");
-    },
+    // startsWithMinus() {
+    //   return this.infos.sum.startsWith("-");
+    // },
 
 
-    showModal(templateName, index) {
+    // showModal(templateName, index) {
+    //   this.activeTemplate = templateName;
+    //   this.rowIndex = index;
+    //   this.open = true;
+    // },
+    showModal(templateName: any) {
       this.activeTemplate = templateName;
-      this.rowIndex = index;
       this.open = true;
     },
-
     closeModal() {
       this.open = false;
     },
 
-    deleteRow(index) {
-      this.infos.splice(index, 1);
-      this.$refs.paymentRows[index].closeModal();
-    },
+    // closeModal() {
+    //   this.open = false;
+    // },
   }
 }
 
@@ -281,9 +283,4 @@ export default {
 
   }
 }
-</style> -->
-<template>
-    <h1>No</h1>
-</template>
-<script setup>
-</script>
+</style>
