@@ -73,7 +73,7 @@ const routes: RouteRecordRaw[] = [
       },
       {
         path: 'registerpage', children: [
-          { path: '', name: 'registerpage', component: RegisterPage, meta: { requiresAuth: false  } },
+          { path: '', name: 'registerpage', component: RegisterPage, meta: { requiresAuth: false } },
           { path: 'offer', name: 'offer', component: Offer, meta: { requiresAuth: false } },
         ],
       },
@@ -85,44 +85,16 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.some(record => record.meta.requiresAuth)) {
-//       if (!auth.loggedIn()) {
-//           auth.needAuth(true);
-//       } else {
-//           // Если пользователь авторизован, но в URL нет токена,
-//           // перенаправьте его на текущий маршрут с токеном в URL.
-//           if (!to.query.token) {
-//               const currentRouteWithToken = { ...to, query: { ...to.query, token: auth.getToken() } };
-//               next(currentRouteWithToken);
-//           } else {
-//               // Если есть токен в URL, сохраните его в состояние и перенаправьте на текущий маршрут без токена в URL.
-//               store.commit('login', { user: auth.user(), token: to.query.token });
-//               const currentRouteWithoutToken = { ...to, query: { ...to.query, token: undefined } };
-//               next(currentRouteWithoutToken);
-//           }
-//       }
-//   } else {
-//       next();
-//   }
-// });
+
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-      if (!auth.loggedIn()) {
-          auth.needAuth(true);
-      } else {
-          // Проверяем, есть ли токен в URL
-          if (to.query.token) {
-              // Если есть токен в URL, сохраняем его в состояние и удаляем из URL
-              store.commit('login', { user: auth.user(), token: to.query.token });
-              const currentRouteWithoutToken = { ...to, query: { ...to.query, token: undefined } };
-              next(currentRouteWithoutToken);
-          } else {
-              next();
-          }
-      }
-  } else {
+    if (!auth.loggedIn()) {
+      auth.needAuth(true);
+    } else {
       next();
+    }
+  } else {
+    next();
   }
 });
 

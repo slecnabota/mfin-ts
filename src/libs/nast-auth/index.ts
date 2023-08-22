@@ -22,7 +22,7 @@ class Auth {
             const token = lsAuth.token;
             const user = lsAuth.user;
             store.commit('login', { user, token });
-            this.apiLogin(); // Восстанавливаем авторизацию с сервера
+            this.apiLogin(); 
         }
     }
 
@@ -62,7 +62,6 @@ class Auth {
             const routeLocation = { name: routerName };
       
             if ((needAuth && !this.loggedIn()) || (!needAuth && this.loggedIn())) {
-              // Ensure that the route name corresponds to a defined route
               if (router.hasRoute(routeLocation.name)) {
                 router.push(routeLocation);
               } else {

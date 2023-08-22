@@ -65,7 +65,6 @@ export default {
         register() {
             if (this.form.validate()) {
                 console.log("yes")
-                // this.setEmail(this.$store.state.formValues.formRegister.email);
             } else {
                 console.log("no")
             }

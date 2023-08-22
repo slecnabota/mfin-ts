@@ -1,5 +1,5 @@
 <template>
-    <!-- <p class="user-mail">{{ $store.state.email }}</p> -->
+    <p class="user-mail">{{ user }}</p>
     <p class="user-item">Подписка</p>
     <p class="user-item">Смена пароля</p>
     <form @submit.prevent="auth.logout()">
@@ -9,20 +9,20 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-// import { Store } from 'vuex'; 
+import { mapState } from 'vuex';
 import Auth from '../../../../libs/nast-auth/index';
 export default defineComponent({
     name: 'User',
-    data(){
-        return{
+    computed: {
+        ...mapState({
+            user: (state: any) => state.user.email
+        })
+    },
+    data() {
+        return {
             auth: new Auth()
         }
     }
-    // computed: {
-    //     $store: function () {
-    //         return (this as any).$store as Store<any>; // Explicitly define $store property
-    //     },
-    // },
 })
 </script>
 

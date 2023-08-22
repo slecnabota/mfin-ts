@@ -14,7 +14,6 @@ interface ConfigOptions {
     };
   
     return options[key];
-    console.log("options key")
   };
   
   
